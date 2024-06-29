@@ -2,6 +2,14 @@
 
 Daily log entries and general timeline of project.
 
+## DAY 3 - 06/28/2024
+- Found a good source for structuring my project: https://docs.python-guide.org/writing/structure/
+
+## DAY 2 - 06/25/2024
+- Again to reiterate that **content-based filtering** is probably better:
+  - I have no users and so collaborative filtering (which gives recommendations based on similar users) is impossible.
+- Got extremely tired so I took a nap
+
 ## DAY 1 - 06/24/2024
 
 - Anime recommendation website
@@ -34,6 +42,7 @@ Daily log entries and general timeline of project.
   - Sources:
     - https://www.nvidia.com/en-us/glossary/recommendation-system/
       - Has good pictures to visualize filtering algorithms
+  - Struggled with learning everything and started looking into my past course notes
 
 ## INTRO
 
