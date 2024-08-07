@@ -10,7 +10,7 @@ import json
 # REQUEST HANDLING
 # =============================
 
-def handle_request(pageNum):
+def handle_request(pageNum, perPage):
     print("Handling request")
 
     # API url
@@ -24,7 +24,7 @@ def handle_request(pageNum):
     variables = {
         'pageNum': pageNum,
         'mediaSort': 'ID',
-        'perPage': 50, # max
+        'perPage': perPage,     # max is 50 according to API
         'statusVersion': 2,
         'asHtml': False,
         'sourceVersion': 3,
@@ -34,6 +34,7 @@ def handle_request(pageNum):
     }
 
     response = requests.post(url, json={'query': query, 'variables': variables})
+    print("Finished request")
     return response
 
 
@@ -45,6 +46,7 @@ def handle_response(response):
     print("Handling response")
     if response.status_code == requests.codes.ok:
         json_data = json.loads(response.text)
+        print("Finished response")
         return json_data
     else:
         handle_error(json.loads(response.text))
