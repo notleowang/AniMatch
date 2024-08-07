@@ -2,6 +2,14 @@
 
 Changes and stuff
 
+## 08-07-2024
+### Added
+- `anilist.py` to handle data fetching related to AniList API.
+
+## 06-29-2024
+### Added
+- `module.py` to create all the classes for JSON object response from AniList.
+
 ## 06-28-2024
 ### Changed
 - Structured files following this guide: https://docs.python-guide.org/writing/structure/.
