@@ -13,27 +13,27 @@ $characterSort: [CharacterSort], $staffSort: [StaffSort], $studioSort: [StudioSo
             format
             status(version: $statusVersion)
             description(asHtml: $asHtml)
-            startDate {
-                year
-                month
-                day
-            }
-            endDate {
-                year
-                month
-                day
-            }
+            # startDate {
+            #     year
+            #     month
+            #     day
+            # }
+            # endDate {
+            #     year
+            #     month
+            #     day
+            # }
             season
             seasonYear
             seasonInt
             episodes
-            duration
-            chapters
-            volumes
+            # duration
+            # chapters
+            # volumes
             countryOfOrigin
             isLicensed
             source(version: $sourceVersion)
-            hashtag
+            # hashtag
             # trailer {
             #     id
             #     site
@@ -58,12 +58,12 @@ $characterSort: [CharacterSort], $staffSort: [StaffSort], $studioSort: [StudioSo
             tags {
                 # id
                 name
-                description
-                category
-                rank
-                isGeneralSpoiler
-                isMediaSpoiler
-                isAdult
+                # description
+                # category
+                # rank
+                # isGeneralSpoiler
+                # isMediaSpoiler
+                # isAdult
                 # userId
             }
             # relations
