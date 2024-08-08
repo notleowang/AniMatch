@@ -31,7 +31,11 @@ class Anime:
         }
 
 
+######################
 # HELPER FUNCTIONS
+######################
+
+# Was used for testing
 def deserialize(json_list):
     anime_list = []
     for json_str in json_list:
