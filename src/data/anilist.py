@@ -31,7 +31,7 @@ def fetch_data():
 
         for media in curr_page.media:
             curr_anime = module.Anime(media)
-            anime_list.append(curr_anime.to_json()) # need to serialize module.Anime object
+            anime_list.append(curr_anime)
 
         if not curr_page.hasNextPage:
             break
@@ -39,7 +39,7 @@ def fetch_data():
         pageNum += 1
 
     # Write to 'test/anime_list.json'
-    with open('tests/test.json', 'w', encoding='utf-8') as f:
+    with open('tests/anime_list.json', 'w', encoding='utf-8') as f:
         json.dump(anime_list, f, ensure_ascii=False, indent=4)
 
     print("Finished Anime Show List")
