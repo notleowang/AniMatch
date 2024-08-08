@@ -4,6 +4,10 @@ Changes and stuff
 
 ## 08-07-2024
 ### Added
+- Functions for cleaning the description column in DataFrame.
+
+## 08-06-2024
+### Added
 - `anilist.py` to handle data fetching related to AniList API.
 
 ## 06-29-2024

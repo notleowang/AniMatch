@@ -2,6 +2,12 @@
 
 My personal log entries and general timeline of project.
 
+## DAY 6 - 08/07/2024
+- Got the `anime_list.json` completed.
+- Starting the preprocessing steps.
+  - Need to tokenize anime show descriptions if i'm using it for content-based filtering.
+    - Will use natural language toolkit (nltk)
+
 ## DAY 5 - 08/06/2024
 - Back from vacation lol
 - Rejogging memory:
