@@ -2,7 +2,7 @@ import webbrowser
 
 from urllib.parse import urlparse, parse_qs
 
-from app.src.main.keys import ANILIST_CLIENT_ID
+from animatch.anilist.api.keys import ANILIST_CLIENT_ID
 
 AUTH_URL = 'https://anilist.co/api/v2/oauth/authorize'
 
@@ -20,5 +20,5 @@ def login_anilist():
     if access_token:
         print("\nUser Authenticated!\n")
         return access_token
-    
+
     return None

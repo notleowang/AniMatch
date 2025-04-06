@@ -3,13 +3,12 @@ import sys
 import torch
 from torch.utils.data import DataLoader
 
-from app.src.main.animatch.setup.setup import setup
-from app.src.main.animatch.model.AniListDataset import AniListDataset
-from app.src.main.animatch.anilist.api.login import login_anilist
-from app.src.main.animatch.anilist.api.queries import get_viewer
+from animatch.setup.setup import setup
+from animatch.model.AniListDataset import AniListDataset
+from animatch.anilist.api.login import login_anilist
+from animatch.anilist.api.queries import get_viewer
 
 access_token = None
-
 
 def main():
     args = sys.argv[1:]
@@ -52,7 +51,7 @@ def main():
         return 0
 
     global access_token
-    
+
     while True:
         print('\nAniMatch')
         print('-----------------------')
@@ -66,9 +65,9 @@ def main():
             print('6 - Recommend based off Genre')
         print('q - Quit Application')
         print('-----------------------\n')
-        
+
         x = input("Input: ")
-        
+
         match x:
             case '1':
                 continue
