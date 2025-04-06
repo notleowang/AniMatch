@@ -2,7 +2,7 @@ import webbrowser
 
 from urllib.parse import urlparse, parse_qs
 
-from keys import ANILIST_CLIENT_ID
+from app.src.main.keys import ANILIST_CLIENT_ID
 
 AUTH_URL = 'https://anilist.co/api/v2/oauth/authorize'
 

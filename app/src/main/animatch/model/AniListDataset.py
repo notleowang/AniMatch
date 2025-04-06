@@ -9,7 +9,7 @@ import torch
 from torch.utils.data import Dataset
 from sentence_transformers import SentenceTransformer
 
-from anilist.queries import *
+from app.src.main.animatch.anilist.api.queries import *
 
 
 class AniListDataset(Dataset):

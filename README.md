@@ -7,17 +7,23 @@
 - Recommender Systems Wikipedia: https://en.wikipedia.org/wiki/Recommender_system
 - Sentence Transformers: https://sbert.net/index.html
 
+- Vue: https://vuejs.org/guide/introduction.html
+
 <br>
 
-<img src="./images/very-accurate-visualization.png" alt="AniMatch Visualization" style="width:100%">
+<img src="very-accurate-visualization.png" alt="AniMatch Visualization" style="width:100%">
 
 ### Roadmap
 
 - [ ] Back End
   - [x] User Auth
-  - [x] Get AniList data
+  - [x] Get AniList data from database
   - [ ] Create training data
   - [ ] Train a neural network
-  - [ ] Get recommendations
+  - [ ] Actually get recommendations from the network
+  - [ ] Connect with Front-End via RESTful implementation
 - [ ] Front End
+  - [ ] Landing Page
+  - [ ] Auth Page
   - [ ] Home Page
+  - [ ] User Page?

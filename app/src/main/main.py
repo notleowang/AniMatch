@@ -3,10 +3,10 @@ import sys
 import torch
 from torch.utils.data import DataLoader
 
-from setup import setup
-from model.classes import AniListDataset
-from anilist.login import login_anilist
-from anilist.queries import get_viewer
+from app.src.main.animatch.setup.setup import setup
+from app.src.main.animatch.model.AniListDataset import AniListDataset
+from app.src.main.animatch.anilist.api.login import login_anilist
+from app.src.main.animatch.anilist.api.queries import get_viewer
 
 access_token = None
 
@@ -15,6 +15,7 @@ def main():
     args = sys.argv[1:]
     if len(args) == 2 and args[0] == '-setup':
         setup()
+        return 0
     if len(args) == 2 and args[0] == '-dataset':
         dataset = AniListDataset(
             json_path='tests/anime_list.json',

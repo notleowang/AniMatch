@@ -7,8 +7,6 @@ TODO: clean up the duplicate code in this file.
 
 import requests
 
-from user import Viewer
-
 API_URL = 'https://graphql.anilist.co'
 
 # Query for Viewer
@@ -21,7 +19,7 @@ def get_viewer(access_token):
         }
     }
     '''
-    
+
     json_body = {
         'query': query,
         # 'variables': variables
