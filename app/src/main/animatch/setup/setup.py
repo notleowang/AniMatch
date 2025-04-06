@@ -22,7 +22,6 @@ MAX_ENTRIES_PER_PAGE = 50
 SLEEP_BUFFER = 15 # safety guard
 SLEEP_DURATION = 60 + SLEEP_BUFFER
 
-
 def setup():
     try:
         print("\n--Running Setup--")
