@@ -14,24 +14,25 @@ import json
 import requests
 
 # FILE_PATH = './tests/anime_list.json'
-FILE_PATH = './app/src/main/animatch/setup/tests/temp.json'
+FILE_PATH = './tests/temp.json'
 API_URL = 'https://graphql.anilist.co'
 REQUESTS_THRESHOLD_BUFFER = 10 # safety guard
 REQUESTS_THRESHOLD = 60 + REQUESTS_THRESHOLD_BUFFER
 MAX_ENTRIES_PER_PAGE = 50
-SLEEP_BUFFER = 15 # safety guard
+SLEEP_BUFFER = 20 # safety guard
 SLEEP_DURATION = 60 + SLEEP_BUFFER
 
 def setup():
+    page_num = 1
+    anime_list = []
+
     try:
         print("\n--Running Setup--")
         start_time = time.perf_counter()
 
         # build data
-        anime_list = []
-        page_num = 1
-        for _ in range(5):
-        # while True:
+        # for _ in range(5):
+        while True:
             query = '''
             query Page($page: Int, $perPage: Int, $type: MediaType) {
                 Page(page: $page, perPage: $perPage) {
@@ -77,7 +78,7 @@ def setup():
             # CHECK RATE LIMITS
             rate_limit_remaining = response.headers['X-RateLimit-Remaining']
             print(f"X-RateLimit-Remaining: {rate_limit_remaining}")
-            # chill for one minute if we've hit the rate limit
+            # chill if we've hit the rate limit
             if int(rate_limit_remaining) == REQUESTS_THRESHOLD:
                 print("Sleeping")
                 time.sleep(SLEEP_DURATION)
@@ -101,14 +102,17 @@ def setup():
 
             page_num += 1
 
-        with open(FILE_PATH, 'w', encoding='utf-8') as f:
-            json.dump(anime_list, f, ensure_ascii=False, indent=4)
-
         end_time = time.perf_counter()
-        runtime = end_time - start_time
     except Exception as e:
         print(f'EXCEPTION: {e}')
-    finally:
-        print(f'Added {len(anime_list)} entries')
-        print(f'Executed in {time.strftime("%H:%M:%S", time.gmtime(runtime))}')
-        print("--Finished Setup--")
+
+    with open(FILE_PATH, 'w', encoding='utf-8') as f:
+        json.dump(anime_list, f, ensure_ascii=False, indent=4)
+
+    print(f'Added {len(anime_list)} entries')
+    print(f'Ended at page_num: {page_num}')
+
+    runtime = end_time - start_time
+    print(f'Executed in {time.strftime("%H:%M:%S", time.gmtime(runtime))}')
+
+    print("--Finished Setup--")

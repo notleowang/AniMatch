@@ -12,10 +12,10 @@ access_token = None
 
 def main():
     args = sys.argv[1:]
-    if len(args) == 2 and args[0] == '-setup':
+    if args[0] == '-setup':
         setup()
         return 0
-    if len(args) == 2 and args[0] == '-dataset':
+    if args[0] == '-dataset':
         dataset = AniListDataset(
             json_path='tests/anime_list.json',
             st_model_name='all-MiniLM-L6-v2'
