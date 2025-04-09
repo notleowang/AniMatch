@@ -71,7 +71,7 @@ class AniListDataset(Dataset):
         # EXTRACT DATA FROM MEDIA OBJECT
         anime_id = media_item.id
         # title_english = media_item.title_english
-        # title_romaji = media_item.title_romaji
+        title_romaji = media_item.title_romaji
         genres = media_item.genres
         tags = media_item.tags
         description = media_item.description
@@ -97,7 +97,7 @@ class AniListDataset(Dataset):
         result = {
             'id': anime_id,                                     # for debugging
             # 'title_english': title_english,
-            # 'title_romaji': title_romaji,
+            'title_romaji': title_romaji,
             # 'genres': genres,
             # 'tags': tags,
             'genre_vector': genre_vector,                       # tensor

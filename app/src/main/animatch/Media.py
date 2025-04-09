@@ -20,14 +20,29 @@ class Media:
         self.is_adult: bool = False # api_media is HENTAI-SAFE for now...
 
         # ======= CONSTRUCT FIELDS =======
+        # ID
         self.id = api_media.get('id') # Should be non-null based off GraphQL Schema
+
+        # TITLE
         self.title = api_media.get('title', None)
         if self.title:
             self.title_english = self.title.get('english', "")
+            if not self.title_english:
+                self.title_english = ""
             self.title_romaji = self.title.get('romaji', "")
+            if not self.title_romaji:
+                self.title_romaji = ""
+
+        # GENRES
         self.genres = api_media.get('genres', [])
+
+        # TAGS
         self.tags = self._construct_tags(api_media.get('tags', []))
-        self.description = api_media.get('description', "")
+
+        # DESCRIPTION
+        self.description = api_media.get('description', "")             # TODO: Parse html tags out of description
+        if not self.description:
+            self.description = ""
 
     def _construct_tags(self, api_media_tags_list):
         if not api_media_tags_list:
