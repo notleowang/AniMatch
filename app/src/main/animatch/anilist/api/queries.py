@@ -24,15 +24,15 @@ def get_viewer(access_token):
         'query': query,
         # 'variables': variables
     }
-    
+
     headers = {
         'Authorization': 'Bearer ' + access_token,
         'Content-Type': 'application/json',
         'Accept': 'application/json',
     }
-    
+
     response = requests.post(API_URL, headers=headers, json=json_body)
-    
+
     if response.status_code == 200:
         json_data = response.json()
         viewer = json_data['data']['Viewer']
@@ -47,13 +47,13 @@ def get_genre_collection():
         GenreCollection
     }
     '''
-    
+
     json_body = {
         'query': query,
     }
-    
+
     response = requests.post(API_URL, json=json_body)
-    
+
     if response.status_code == 200:
         json_data = response.json()
         genre_collection = json_data['data']['GenreCollection']
@@ -61,7 +61,8 @@ def get_genre_collection():
     else:
         print("ERROR: Failed to fetch Genre Collection")
         return []
-    
+
+# Query for MediaTagCollection
 def get_media_tag_collection():
     query = '''
     query Query {
@@ -70,13 +71,13 @@ def get_media_tag_collection():
         }
     }
     '''
-    
+
     json_body = {
         'query': query,
     }
-    
+
     response = requests.post(API_URL, json=json_body)
-    
+
     if response.status_code == 200:
         json_data = response.json()
         media_tag_collection = json_data['data']['MediaTagCollection']
